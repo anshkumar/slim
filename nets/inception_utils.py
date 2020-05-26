@@ -74,7 +74,8 @@ def inception_arg_scope(
     normalizer_params = {}
   # Set weight_decay for weights in Conv and FC layers.
   with slim.arg_scope([tf.contrib.model_pruning.masked_conv2d, 
-                      tf.contrib.model_pruning.masked_fully_connected],
+                      tf.contrib.model_pruning.masked_fully_connected,
+                      tf.contrib.model_pruning.last_mask_update_step],
                       weights_regularizer=slim.l2_regularizer(weight_decay)):
     with slim.arg_scope(
         [tf.contrib.model_pruning.masked_conv2d],
