@@ -135,6 +135,7 @@ def masked_inception_arg_scope(
         activation_fn=activation_fn,
         normalizer_fn=normalizer_fn,
         normalizer_params=normalizer_params) as sc:
+          tf.contrib.model_pruning.model_pruning.last_mask_update_step = \
+            tf.train.get_global_step()
       return sc
 
-      
