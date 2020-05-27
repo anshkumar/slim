@@ -600,5 +600,4 @@ def _reduced_kernel_size_for_small_input(input_tensor, kernel_size):
 
 
 inception_v2_arg_scope = inception_utils.inception_arg_scope
-masked_inception_v2_arg_scope = inception_utils.masked_inception_arg_scope
 
