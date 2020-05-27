@@ -89,7 +89,7 @@ def masked_inception_arg_scope(
     batch_norm_decay=0.9997,
     batch_norm_epsilon=0.001,
     activation_fn=tf.nn.relu,
-    batch_norm_updates_collections=tf.compat.v1.GraphKeys.UPDATE_OPS,
+    batch_norm_updates_collections=tf.GraphKeys.UPDATE_OPS,
     batch_norm_scale=False):
   """Defines the default arg scope for inception models.
 
@@ -135,7 +135,5 @@ def masked_inception_arg_scope(
         activation_fn=activation_fn,
         normalizer_fn=normalizer_fn,
         normalizer_params=normalizer_params) as sc:
-      tf.contrib.model_pruning.last_mask_update_step = \
-            tf.train.get_global_step()
       return sc
 
